@@ -106,7 +106,7 @@ async def ask_question(update: Update, context: ContextTypes.DEFAULT_TYPE) -> No
 
         # Generate a response using OpenAI
         completion = client.chat.completions.create(
-            model="bartowski/gemma-2-9b-it-GGUF",
+            model="Your model",
             messages=[
                 {"role": "system", "content": systempromt},
                 {"role": "user", "content":  prompt},
@@ -136,7 +136,7 @@ async def bot_reply(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
         chat_history.append({"role": "user", "content": user_input})
 
         completion = client.chat.completions.create(
-            model="bartowski/gemma-2-9b-it-GGUF",
+            model="Your model",
             messages=[
                 {"role": "system", "content": systempromt},
                 *chat_history,
